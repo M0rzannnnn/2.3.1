@@ -17,10 +17,10 @@ public class UserController {
 
     @GetMapping(value = "/users")
     public String printUsers (ModelMap model) {
-        userService.add(new User("Kristina", "Semennikova", 31L));
-        userService.add(new User("Polina", "Tikhova", 23L));
-        userService.add(new User("Vadim", "Vinogradov", 32L));
-        userService.add(new User("Vladimir", "Semennikov", 34L));
+//        userService.add(new User("Kristina", "Semennikova", 31L));
+//        userService.add(new User("Polina", "Tikhova", 23L));
+//        userService.add(new User("Vadim", "Vinogradov", 32L));
+//        userService.add(new User("Vladimir", "Semennikov", 34L));
         List<User> listOfUsers = userService.getAll();
         model.addAttribute("listOfUsers", listOfUsers);
         return "Users";
@@ -38,16 +38,10 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @GetMapping("/{id}")
-    public String read(ModelMap model, @PathVariable("id") Long id) {
-        model.addAttribute("user", userService.show(id));
-        return "show";
-    }
-
     @GetMapping("/{id}/edit")
     public String editUser (ModelMap model, @PathVariable("id") Long id) {
         model.addAttribute("user", userService.show(id));
-        return "editUser";
+        return "/editUser";
     }
 
     @PatchMapping("/{id}")

@@ -22,19 +22,6 @@
     </tr>
     </thead>
     <tbody>
-<!--    <tr th:each="cr : ${listOfUsers}">-->
-<!--        <td th:text="${cr.name}"/>-->
-<!--        <td th:text="${cr.lastName}"/>-->
-<!--        <td th:text="${cr.age}"/>-->
-<!--        <td>-->
-<!--            <form method="GET" th:action="@{/{id}/edit(id=${user.getId()})}">-->
-<!--                <input type="submit" value="Update">-->
-<!--            </form>-->
-<!--            <form th:method="DELETE" th:action="@{/{id}/(id=${user.getId()})}">-->
-<!--                <input type="submit" value="Delete">-->
-<!--            </form>-->
-<!--        </td>-->
-<!--    </tr>-->
 
     <tr align="center" th:each="user : ${listOfUsers}">
         <td width="200"><p th:text="${user.getName()}"></p></td>
