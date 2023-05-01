@@ -6,6 +6,7 @@ import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CarServiceImp implements CarService {
@@ -24,7 +25,7 @@ public class CarServiceImp implements CarService {
             if (count == null) {
                 return cars;
             }
-            List<Car> cars1 = cars.stream().limit(count).toList();
+            List<Car> cars1 = cars.stream().limit(count).collect(Collectors.toList());
             return cars1;
         }
 
